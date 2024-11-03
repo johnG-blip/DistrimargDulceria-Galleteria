@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Proyecto multimedia accesible, escalable y usable. Explora fotos, videos y audios de forma intuitiva.">
+    <title>Página Multimedia Accesible</title>
+    <!-- Enlace a la biblioteca Ionicons -->
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <style>
+        /* Estilos generales */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #ffeb3b; /* Amarillo accesible */
+            color: #333;
+        }
+
+        /* Encabezado */
+        header {
+            background-color: #d32f2f; /* Rojo con buen contraste */
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+            position: relative;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        header h1 {
+            margin: 4;
+            font-size: 48px;
+        }
+
+        /* Espacio para el logo */
+        .logo-placeholder {
+            width: 300px;
+            height: 300px;
+            background-color: #fff;
+            border: 5px dashed #333;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 10px;
+            border-radius: 50%; /* Hace el contenedor redondo */
+        }
+
+        .logo-placeholder span {
+            font-size: 18px;
+            color: #333;
+        }
+
+        /* Barra de navegación accesible */
+        nav {
+            background-color: #c62828; /* Rojo accesible */
+            padding: 10px;
+            text-align: center;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        nav a:hover, nav a:focus {
+            text-decoration: underline;
+            outline: none;
+        }
+
+        /* Sección principal */
+        main {
+            padding: 20px;
+            margin-top: 80px; /* Para evitar que el contenido quede detrás del menú */
+        }
+
+        .media-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .media-item {
+            background-color: #fff;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 500px; /* Limitar el ancho de los elementos */
+            width: 100%;
+        }
+
+        /* Video con subtítulos accesibles */
+        video {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        /* Imágenes accesibles */
+        img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        /* Controles de audio accesibles */
+        audio {
+            width: 100%;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #d32f2f;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+            margin-top: 20px;
+        }
+
+        footer p {
+            margin: 5px 0;
+        }
+
+        /* Asegurar que los enlaces sean accesibles con teclado */
+        a {
+            outline: none;
+        }
+
+        a:focus {
+            outline: 2px solid #fff;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navegación -->
+    <nav>
+        <a href="#inicio">Inicio</a>
+        <a href="#seccion-fotos">Fotos</a>
+        <a href="#seccion-videos">Videos</a>
+        <a href="#seccion-audios">Audios</a>
+    </nav>
+
+    <!-- Encabezado con Logo y Nombre del Proyecto -->
+    <header id="inicio" role="banner">
+        <div class="logo-placeholder" aria-label="Espacio para el logo">
+            <img src="Imagenes/LOGO-1.png" alt="El logotipo de la marca" style="border-radius: 50%; width: 100%; height: 100%;">
+        </div>
+        <h1>Distrimarg Dulceria & Galleteria</h1>
+    </header>
+
+    <!-- Sección principal -->
+    <main role="main">
+        <h2 style="text-align: center;">Galería de Contenidos Multimedia</h2>
+
+        <!-- Sección de Fotos -->
+        <div class="media-section" id="seccion-fotos">
+            <h3>Fotos</h3>
+            <div class="media-item">
+                <img src="Imagenes/img-2.png" alt="Descripción de la imagen" style="display: block; margin: auto; width: 300px; height: 300px;">
+                <p style="text-align: center;">Esta imagen muestra...</p>
+            </div>
+        </div>
+
+        <!-- Sección de Videos -->
+        <div class="media-section" id="seccion-videos">
+            <h3>Videos</h3>
+            <div class="media-item">
+                <video controls aria-label="Video accesible con subtítulos">
+                    <source src="Videos/video-1.mp4" type="video/mp4">
+                    <track src="subtitulos.vtt" kind="subtitles" srclang="es" label="Español">
+                    Tu navegador no soporta la reproducción de videos.
+                </video>
+                <p style="text-align: center;">Video con subtítulos para personas con discapacidades auditivas.</p>
+            </div>
+        </div>
+
+        <!-- Sección de Audios -->
+        <div class="media-section" id="seccion-audios">
+            <h3>Audios</h3>
+            <div class="media-item">
+                <audio controls aria-label="Control de audio accesible">
+                    <source src="Audio/audio-3.mp3" type="audio/mp3">
+                    Tu navegador no soporta la reproducción de audios.
+                </audio>
+                <p style="text-align: center;">Descripción del contenido del audio para usuarios con discapacidades auditivas.</p>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer con Contacto -->
+    <footer role="contentinfo">
+        <p>&copy; 2024 - Todos los derechos reservados</p>
+        <p><ion-icon name="phone-portrait-outline"></ion-icon> Teléfono: +57 300 4889389</p>
+        <p><ion-icon name="navigate-outline"></ion-icon> <a href="https://www.google.com/maps/place/Distrimarg+Dulceria+%26+Galleteria/@4.574207,-74.1673668,17z/data=!3m1!4b1!4m6!3m5!1s0x8e3f9f0eabcf71bd:0xe2b5144869cd609b!8m2!3d4.5742017!4d-74.1647919!16s%2Fg%2F11fqbmr29_?hl=es&entry=ttu&g_ep=EgoyMDI0MTAyMy4wIKXMDSoASAFQAw%3D%3D/tu-enlace-aqui" target="_blank" style="color: #fff;">Dirección:  Cl. 73c Sur, Bogotá</p>
+         
+        
+    </footer>
+
+</body>
+</html>
