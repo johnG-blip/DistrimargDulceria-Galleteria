@@ -3,211 +3,376 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Proyecto multimedia accesible, escalable y usable. Explora fotos, videos y audios de forma intuitiva.">
-    <title>Página Multimedia Accesible</title>
-    <!-- Enlace a la biblioteca Ionicons -->
-    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <title>Supermercado Demo</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@900&family=Poppins:wght@600&family=Lobster&display=swap" rel="stylesheet">
+    <!-- Incluir Font Awesome para los íconos de redes sociales -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css">
     <style>
-        /* Estilos generales */
+        /* Estilos generales de la página */
         body {
-            font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #ffeb3b; /* Amarillo accesible */
+            background-color: #FFF5E1;
+            font-family: Arial, sans-serif;
             color: #333;
+            transition: all 0.3s ease;
         }
 
-        /* Encabezado */
-        header {
-            background-color: #d32f2f; /* Rojo con buen contraste */
-            color: #fff;
-            padding: 20px;
-            text-align: center;
-            position: relative;
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-        }
-
-        header h1 {
-            margin: 4;
-            font-size: 48px;
-        }
-
-        /* Espacio para el logo */
-        .logo-placeholder {
-            width: 300px;
-            height: 300px;
-            background-color: #fff;
-            border: 5px dashed #333;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 10px;
-            border-radius: 50%; /* Hace el contenedor redondo */
-        }
-
-        .logo-placeholder span {
-            font-size: 18px;
-            color: #333;
-        }
-
-        /* Barra de navegación accesible */
+        /* Barra de navegación */
         nav {
-            background-color: #c62828; /* Rojo accesible */
-            padding: 10px;
-            text-align: center;
-            position: fixed;
-            width: 100%;
+            background-color: #F57C00;
+            padding: 15px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
             top: 0;
             z-index: 1000;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
 
-        nav a {
-            color: #fff;
-            text-decoration: none;
-            margin: 0 15px;
-            font-weight: bold;
-            font-size: 18px;
+        /* Logo */
+        nav .logo {
+            max-height: 60px;
+            width: 60px; /* Ajusta el tamaño del logo */
+            border-radius: 50%; /* Hacemos el logo redondo */
         }
 
-        nav a:hover, nav a:focus {
-            text-decoration: underline;
-            outline: none;
-        }
-
-        /* Sección principal */
-        main {
-            padding: 20px;
-            margin-top: 80px; /* Para evitar que el contenido quede detrás del menú */
-        }
-
-        .media-section {
+        /* Contenedor para los elementos del menú */
+        nav .menu {
             display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 20px;
+            justify-content: center; /* Centra los elementos del menú */
+            flex-grow: 1; /* Hace que los elementos se expandan para ocupar el espacio */
         }
 
-        .media-item {
-            background-color: #fff;
-            border-radius: 8px;
-            padding: 20px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            max-width: 500px; /* Limitar el ancho de los elementos */
-            width: 100%;
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center; /* Asegura que los enlaces estén centrados */
+            gap: 30px;
         }
 
-        /* Video con subtítulos accesibles */
-        video {
-            width: 100%;
-            height: auto;
-            border-radius: 8px;
+        nav ul li a {
+            text-decoration: none;
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.2em;
+            color: white;
+            transition: color 0.3s;
         }
 
-        /* Imágenes accesibles */
-        img {
-            width: 100%;
-            height: auto;
-            border-radius: 8px;
+        nav ul li a:hover {
+            color: #FFE082;
         }
 
-        /* Controles de audio accesibles */
-        audio {
-            width: 100%;
+        /* Contenedor de los íconos de redes sociales */
+        .social-icons {
+            display: flex;
+            gap: 15px;
         }
 
-        /* Footer */
-        footer {
-            background-color: #d32f2f;
+        .social-icons a {
+            color: white;
+            font-size: 1.5em;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .social-icons a:hover {
+            color: #FFE082; /* Color de hover para los íconos */
+        }
+
+        /* Banner principal */
+        .banner {
+            text-align: center;
+            background: linear-gradient(to right, #FF8A65, #FFD54F);
+            padding: 60px 20px;
             color: #fff;
+        }
+        .banner h1 {
+            font-family: 'Lobster', cursive;
+            font-size: 3.5em;
+            margin-bottom: 10px;
+        }
+        .banner p {
+            font-family: 'Roboto', sans-serif;
+            font-size: 1.5em;
+        }
+
+        /* Sección del catálogo con fondo animado */
+        #catalogo {
+            padding: 40px 20px;
+            text-align: center;
+            background-color: #FFF3E0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Fondo con imágenes que se mueven horizontalmente */
+        #catalogo::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 300%;
+            height: 100%;
+            background: url('background1.jpg') repeat-x;
+            animation: moveBackground 15s linear infinite;
+            z-index: -1;
+        }
+
+        /* Animación para el fondo */
+        @keyframes moveBackground {
+            0% { left: 0; }
+            100% { left: -100%; }
+        }
+
+        #catalogo h2 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            color: #D84315;
+        }
+
+        /* Carrusel de productos */
+        .catalogo-container {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            overflow-x: scroll;
+            gap: 20px;
+            padding: 20px 0;
+        }
+        .item {
+            min-width: 250px;
+            background-color: #FFEB3B;
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+            cursor: pointer;
+            margin-right: 20px;
+            resize: both; /* Hacer los productos redimensionables */
+            overflow: hidden; /* Para evitar que se desborde el contenido */
+        }
+        .item:hover {
+            transform: scale(1.1);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        .item img {
+            max-width: 100%;
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
+        .item p {
+            font-family: 'Roboto', sans-serif;
+            font-size: 1.2em;
+        }
+
+        /* Estilos para los controles del carrusel */
+        .catalogo-container::-webkit-scrollbar {
+            height: 8px;
+        }
+        .catalogo-container::-webkit-scrollbar-thumb {
+            background: #F57C00;
+            border-radius: 10px;
+        }
+        .catalogo-container::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+
+        /* Sección de videos */
+        #videos {
+            padding: 40px 20px;
+            background: linear-gradient(to right, #FFD54F, #F57C00);
+            color: white;
+            text-align: center;
+        }
+        #videos h2 {
+            font-family: 'Lobster', cursive;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+        video, audio {
+            width: 80%;
+            max-width: 700px;
+            margin: 20px auto;
+        }
+
+        /* Pie de página */
+        footer {
+            background-color: #D84315;
+            color: white;
             text-align: center;
             padding: 20px;
-            margin-top: 20px;
         }
-
         footer p {
+            font-family: 'Poppins', sans-serif;
             margin: 5px 0;
         }
 
-        /* Asegurar que los enlaces sean accesibles con teclado */
-        a {
-            outline: none;
+        /* Estilos para el botón de subir */
+        #scrollUp {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #F57C00;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            padding: 15px 20px;
+            font-size: 2em;
+            cursor: pointer;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            opacity: 0;
+            transition: opacity 0.3s ease, transform 0.3s ease;
+        }
+        #scrollUp:hover {
+            background-color: #FFD54F;
+            color: #D84315;
+        }
+        #scrollUp.show {
+            opacity: 1;
+            transform: translateY(0);
         }
 
-        a:focus {
-            outline: 2px solid #fff;
+        /* Estilos del reproductor de audio debajo de cada producto */
+        .audio-player {
+            margin-top: 15px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .audio-player audio {
+            width: 100%;
+            max-width: 250px;
+            margin-top: 10px;
+            border-radius: 5px;
         }
     </style>
 </head>
 <body>
 
-    <!-- Navegación -->
+   
+
+
+    <!-- Barra de navegación -->
     <nav>
-        <a href="#inicio">Inicio</a>
-        <a href="#seccion-fotos">Fotos</a>
-        <a href="#seccion-videos">Videos</a>
-        <a href="#seccion-audios">Audios</a>
+        <div>
+            <img src="Imagenes/LOGO-1.png" alt="Logo del Supermercado" class="logo">
+        </div>
+        <div class="menu"> 
+            <ul>
+                <li><a href="#catalogo">Catálogo</a></li>
+                <li><a href="#videos">Videos</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </div>
+        <!-- Íconos de redes sociales -->
+        <div class="social-icons">
+            <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.youtube.com" target="_blank"><i class="fab fa-youtube"></i></a>
+            <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.tiktok.com" target="_blank"><i class="fab fa-tiktok"></i></a>
+        </div>
     </nav>
 
-    <!-- Encabezado con Logo y Nombre del Proyecto -->
-    <header id="inicio" role="banner">
-        <div class="logo-placeholder" aria-label="Espacio para el logo">
-            <img src="Imagenes/LOGO-1.png" alt="El logotipo de la marca" style="border-radius: 50%; width: 100%; height: 100%;">
-        </div>
-        <h1>Distrimarg Dulceria & Galleteria</h1>
-    </header>
+    <!-- Banner principal -->
+    <section class="banner">
+        <h1>Bienvenido a nuestro Supermercado</h1>
+        <p>Encuentra los mejores productos con nosotros.</p>
+    </section>
 
-    <!-- Sección principal -->
-    <main role="main">
-        <h2 style="text-align: center;">Galería de Contenidos Multimedia</h2>
-
-        <!-- Sección de Fotos -->
-        <div class="media-section" id="seccion-fotos">
-            <h3>Fotos</h3>
-            <div class="media-item">
-                <img src="Imagenes/img-2.png" alt="Descripción de la imagen" style="display: block; margin: auto; width: 300px; height: 300px;">
-                <p style="text-align: center;">Esta imagen muestra...</p>
+    <!-- Sección de catálogo -->
+    <section id="catalogo">
+        <h2>Catálogo de Productos</h2>
+        <div class="catalogo-container">
+            <!-- Producto 1 -->
+            <div class="item">
+                <img src="Imagenes/P1.jpg" alt="Producto 1">
+                <p>Producto 1</p>
+                <p>$10,000</p>
+                <!-- Reproductor de audio debajo del producto -->
+                <div class="audio-player">
+                    <audio controls>
+                        <source src="audio-producto1.mp3" type="audio/mp3">
+                        Tu navegador no soporta la reproducción de audio.
+                    </audio>
+                </div>
+            </div>
+            <!-- Producto 2 -->
+            <div class="item">
+                <img src="Imagenes/P2.jpg" alt="Producto 2">
+                <p>Producto 2</p>
+                <p>$15,000</p>
+                <!-- Reproductor de audio debajo del producto -->
+                <div class="audio-player">
+                    <audio controls>
+                        <source src="audio-producto2.mp3" type="audio/mp3">
+                        Tu navegador no soporta la reproducción de audio.
+                    </audio>
+                </div>
+            </div>
+            <!-- Producto 3 -->
+            <div class="item">
+                <img src="Imagenes/P3.jpg" alt="Producto 3">
+                <p>Producto 3</p>
+                <p>$8,000</p>
+                <!-- Reproductor de audio debajo del producto -->
+                <div class="audio-player">
+                    <audio controls>
+                        <source src="audio-producto3.mp3" type="audio/mp3">
+                        Tu navegador no soporta la reproducción de audio.
+                    </audio>
+                </div>
             </div>
         </div>
+    </section>
 
-        <!-- Sección de Videos -->
-        <div class="media-section" id="seccion-videos">
-            <h3>Videos</h3>
-            <div class="media-item">
-                <video controls aria-label="Video accesible con subtítulos">
-                    <source src="Videos/video-1.mp4" type="video/mp4">
-                    <track src="subtitulos.vtt" kind="subtitles" srclang="es" label="Español">
-                    Tu navegador no soporta la reproducción de videos.
-                </video>
-                <p style="text-align: center;">Video con subtítulos para personas con discapacidades auditivas.</p>
-            </div>
-        </div>
+    <!-- Sección de videos -->
+    <section id="videos">
+        <h2>Videos de nuestros productos</h2>
+        <video controls>
+            <source src="video-producto1.mp4" type="video/mp4">
+            Tu navegador no soporta el formato de video.
+        </video>
+    </section>
 
-        <!-- Sección de Audios -->
-        <div class="media-section" id="seccion-audios">
-            <h3>Audios</h3>
-            <div class="media-item">
-                <audio controls aria-label="Control de audio accesible">
-                    <source src="Audio/audio-3.mp3" type="audio/mp3">
-                    Tu navegador no soporta la reproducción de audios.
-                </audio>
-                <p style="text-align: center;">Descripción del contenido del audio para usuarios con discapacidades auditivas.</p>
-            </div>
-        </div>
-    </main>
 
-    <!-- Footer con Contacto -->
-    <footer role="contentinfo">
-        <p>&copy; 2024 - Todos los derechos reservados</p>
-        <p><ion-icon name="phone-portrait-outline"></ion-icon> Teléfono: +57 300 4889389</p>
-        <p><ion-icon name="navigate-outline"></ion-icon> <a href="https://www.google.com/maps/place/Distrimarg+Dulceria+%26+Galleteria/@4.574207,-74.1673668,17z/data=!3m1!4b1!4m6!3m5!1s0x8e3f9f0eabcf71bd:0xe2b5144869cd609b!8m2!3d4.5742017!4d-74.1647919!16s%2Fg%2F11fqbmr29_?hl=es&entry=ttu&g_ep=EgoyMDI0MTAyMy4wIKXMDSoASAFQAw%3D%3D/tu-enlace-aqui" target="_blank" style="color: #fff;">Dirección:  Cl. 73c Sur, Bogotá</p>
-         
-        
+    <div id="instagram-feed"></div>
+    <h2>Mis Publicaciones de Instagram</h2>
+    <!-- Aquí se mostrara las publicaicones-->
+ 
+
+     <!-- Aquí se va a incluir el código JavaScript que obtiene las publicaciones de Instagram -->
+  <script src="script.js"></script>
+
+
+    <!-- Pie de página -->
+    <footer>
+        <p>&copy; 2024 Supermercado Demo. Todos los derechos reservados.</p>
     </footer>
 
+    <!-- Botón de subir -->
+    <button id="scrollUp">&#8593;</button>
+
+    <script>
+        // Mostrar el botón de subir cuando el usuario haga scroll hacia abajo
+        window.onscroll = function() {
+            var scrollUpButton = document.getElementById('scrollUp');
+            if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+                scrollUpButton.classList.add('show');
+            } else {
+                scrollUpButton.classList.remove('show');
+            }
+        };
+
+        // Función para volver al inicio cuando el usuario haga clic en el botón de subir
+        document.getElementById('scrollUp').addEventListener('click', function() {
+            window.scrollTo({top: 0, behavior: 'smooth'});
+        });
+    </script>
 </body>
 </html>
